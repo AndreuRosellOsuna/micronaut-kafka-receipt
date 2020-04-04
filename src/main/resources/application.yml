@@ -1,0 +1,15 @@
+---
+micronaut:
+  application:
+    name: kafka-example
+---
+kafka:
+  prefix : "${CLOUDKARAFKA_TOPIC_PREFIX}"
+  bootstrap:
+    servers: ${CLOUDKARAFKA_BROKERS}
+  security:
+    protocol: "SASL_SSL"
+  sasl:
+    mechanism: "SCRAM-SHA-256"
+    jaas:
+      config: 'org.apache.kafka.common.security.scram.ScramLoginModule required username="${CLOUDKARAFKA_USERNAME}" password="${CLOUDKARAFKA_PASSWORD}";'

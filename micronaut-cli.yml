@@ -1,0 +1,5 @@
+profile: kafka
+defaultPackage: kafka.example
+---
+testFramework: spock
+sourceLanguage: groovy
